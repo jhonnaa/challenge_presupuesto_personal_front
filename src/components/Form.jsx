@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Form = () => {
-    const fafa = async e=>{
+    const send = async e=>{
             //e.preventDefault()
             let myConcept = document.getElementById('concept').value;
             let myMount = document.getElementById('mount').value;
@@ -29,38 +29,43 @@ export const Form = () => {
                 } 
                 catch(error){}
     }
-    
-        
-        
-    
+    const cc =()=>{
+        document.addEventListener('submit',e=>{
+            e.preventDefault()
+        })
+        const form = document.querySelector('.cont-form')
+        form.style.bottom ='1000px'
+    }
 
 
   return (
     <React.Fragment>
-        <div className='cont-form'>
+        
 
         <form  id='myForm'>
         <label for="concept">Concepto</label>
-        <input  type="text" name="concept" id="concept"/>
+        <input placeholder='Concepto' type="text" name="concept" id="concept"/>
 
         <label for="mount">Monto</label>
-        <input  type="number" name="mount" id="mount"/>
+        <input placeholder='Monto' type="number" name="mount" id="mount"/>
 
         <label for="date">fecha</label>
-        <input  type="date" name="date" id="date"/>
+        <input placeholder='fecha' type="date" name="date" id="date"/>
 
         <label for="type">tipo</label>
         <select name="type" id="type">
-            <option value="tipo"> Seleccione tipo de ingreso</option>
-            <option value="ingreso">ingreso</option>
+            <option value=""> Seleccione tipo de ingreso</option>
+            <option value="ingreso">Ingreso</option>
             <option value="egreso">Egreso</option>
         </select>
 
-        <button type='submit' className='submit' onClick={fafa} >agregar</button>
+        <div className='cont-btns-form'>
+        <button type='submit' className='btn-form' onClick={send} >Agregar</button>
+        <button className='btn-form-cancelar' onClick={cc}>Cancelar</button>
+        </div>
     </form>
 
 
-</div>
 
     </React.Fragment>
   )
