@@ -24,19 +24,21 @@ export const Form = () => {
                     body:transaction
                 }
                 )
-                let json = await res.json
+                let json =  res.json
                 console.log(json)
                 } 
                 catch(error){}
     }
     const cc =()=>{
         document.addEventListener('submit',e=>{
-            e.preventDefault()
+           
         })
         const form = document.querySelector('.cont-form')
         form.style.bottom ='1000px'
     }
+    
 
+    
 
   return (
     <React.Fragment>
@@ -61,7 +63,7 @@ export const Form = () => {
 
         <div className='cont-btns-form'>
         <button type='submit' className='btn-form' onClick={send} >Agregar</button>
-        <button className='btn-form-cancelar' onClick={cc}>Cancelar</button>
+        <div  className='btn-form-cancelar' onClick={cc}>Cancelar</div>
         </div>
     </form>
 
